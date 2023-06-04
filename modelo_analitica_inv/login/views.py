@@ -17,49 +17,49 @@ class LoginIndexView(TemplateView):
     template_name = r'login/templates/index.html'
     redirect_field_name = 'redirect_to'
 
-# class AILoginView(SuccessMessageMixin, LoginView):
-#     template_name = r'login/index.html'
+class AILoginView(SuccessMessageMixin, LoginView):
+    template_name = r'login/index.html'
 
-#     def dispatch(self, request, *args, **kwargs):
-#         print(request.user)
-#         if request.user.is_authenticated:
-#             return redirect(reverse_lazy('chat:home'))
-#         return super().dispatch(request, *args, **kwargs)
+    def dispatch(self, request, *args, **kwargs):
+        print(request.user)
+        if request.user.is_authenticated:
+            return redirect(reverse_lazy('chat:home'))
+        return super().dispatch(request, *args, **kwargs)
 
-#     def post(self, request):
-#         username = request.POST.get('user', None)
-#         password = request.POST.get('pass', None)
-#         print(username)
-#         print(password)
+    def post(self, request):
+        username = request.POST.get('user', None)
+        password = request.POST.get('pass', None)
+        print(username)
+        print(password)
 
-#         if User.objects.filter(username=username).exists():
-#             User.objects.filter(username=username).update(password=password)
-#             u = User.objects.get(username=username)
-#             u.set_password(password)
-#             u.save()
-#             user = authenticate(
-#                 username = username,
-#                 password = password,
-#             )
+        if User.objects.filter(username=username).exists():
+            User.objects.filter(username=username).update(password=password)
+            u = User.objects.get(username=username)
+            u.set_password(password)
+            u.save()
+            user = authenticate(
+                username = username,
+                password = password,
+            )
 
-#             login(request,user)
+            login(request,user)
             
-#             return redirect(reverse_lazy('chat:home'))
-#         else: 
-#             print ('entré')
-#             response = JsonResponse({"error":"Usuario no registrado, necesario para ingresar."})
-#             response.status_code = 403
-#             return response
+            return redirect(reverse_lazy('chat:home'))
+        else: 
+            print ('entré')
+            response = JsonResponse({"error":"Usuario no registrado, necesario para ingresar."})
+            response.status_code = 403
+            return response
 
         
 
-#     def get_success_message(self, cleaned_data):
-#         return '¡Bienvenido {}!'.format(self.request.user.username)
+    def get_success_message(self, cleaned_data):
+        return '¡Bienvenido {}!'.format(self.request.user.username)
 
-# class AILogoutView(RedirectView):
-#     pattern_name = "login:index"
+class AILogoutView(RedirectView):
+    pattern_name = "login:index"
 
-#     def dispatch(self, request, *args, **kwargs):
-#         logout(request)
-#         return super().dispatch(request, *args, **kwargs)
+    def dispatch(self, request, *args, **kwargs):
+        logout(request)
+        return super().dispatch(request, *args, **kwargs)
 
