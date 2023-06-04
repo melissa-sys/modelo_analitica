@@ -18,7 +18,7 @@ class LoginIndexView(TemplateView):
     redirect_field_name = 'redirect_to'
 
 class AILoginView(SuccessMessageMixin, LoginView):
-    template_name = r'login/index.html'
+    template_name = r'login/templates/index.html'
 
     def dispatch(self, request, *args, **kwargs):
         print(request.user)
