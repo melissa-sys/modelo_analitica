@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # Analitica apps
+    'login',
+    'model_inv',
     # Django native apps
     'django.contrib.admin',
     'django.contrib.auth',
