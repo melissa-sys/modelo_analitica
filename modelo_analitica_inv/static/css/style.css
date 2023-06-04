@@ -8,7 +8,7 @@
 }
 
 body {
-	background: linear-gradient(90deg, rgb(171, 165, 157), rgb(103,103,103));		
+	background: linear-gradient(90deg, rgb(171, 165, 157),  #0d0d0d);		
 }
 
 .container {
