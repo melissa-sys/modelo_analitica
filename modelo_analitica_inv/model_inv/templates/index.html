@@ -116,10 +116,9 @@
             data: {'doc': documento},
             type: "POST",
             beforeSend: function(){
-              alert('Cargando información!!')
+              alert('¡Se está cargando la información!')
             },
             success: function (response) {
-              alert('¡Ahora estoy yendo a la posición "home"!');
               $('#main').html(response);
             },
             error: function (xhr, textStatus, errorThrown) {
