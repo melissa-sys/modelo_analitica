@@ -11,7 +11,37 @@
                   <h3 class="card-title" style="color:black" >Información cliente</h3>
                 </div>
                 <div class="card-body"> 
-                  {{ num_doc }}                              
+                  <strong><h3><i class="fas fa-user mr-1"></i> &nbsp; Cliente {{ info.0.ID }}</h3> </strong>
+                  <hr>
+                  <p class="text-muted">
+                    <b>Edad: </b> {{ info.0.Age }}
+                  </p>
+                  <strong><i class="fas fa-book mr-1"></i>Nivel de estudios</strong>
+                  <p class="text-muted">
+                    {{ info.0.Education }}
+                  </p>
+                <hr>
+                  <strong><i class="fas fa-users"></i>Situación familiar</strong>
+                  <p class="text-muted">
+                    <b>Estado civil: </b>{{ info.0.Marital_Status }}
+                  </p>
+                  <p class="text-muted">
+                    <b>Niños: </b>{{ info.0.Kidhome }}
+                  </p>
+                  <p class="text-muted">
+                    <b>Adolecentes: </b>{{ info.0.Teenhome }}
+                  </p>
+                <hr>
+
+                <strong><i class="fas fa-money-bill mr-1"></i> Ingresos mensuales</strong>
+
+                <p class="text-muted">{{ info.0.Income }}</p>
+
+                <strong><i class="fas fa-map-marker-alt mr-1"></i> Ubicación</strong>
+
+                <p class="text-muted">Cali, Colombia</p>
+
+                                    
                 </div>
             </div>
         </div>
@@ -20,7 +50,38 @@
                 <div class="card-header" style="background-color:rgb(103,103,100) ">
                   <h3 class="card-title" >Información portafolio</h3>
                 </div>
-                <div class="card-body">                               
+                <div class="card-body">  
+                  <strong><i class="fas fa-money-check-alt"></i> &nbsp; Productos</strong> 
+                  <ul class="list-group list-group-unbordered mb-3">
+                    <li class="list-group-item">
+                      <b>Producto 1</b> <a class="float-right">{{ info.0.MntWines }}</a>
+                    </li>
+                    <li class="list-group-item">
+                      <b>Producto 2</b> <a class="float-right">{{ info.0.MntMeatProducts }}</a>
+                    </li>
+                    <li class="list-group-item">
+                      <b>Producto 3</b> <a class="float-right">{{ info.0.MntGoldProds }}</a>
+                    </li>
+                    <li class="list-group-item">
+                      <b>Producto 4</b> <a class="float-right">{{ info.0.MntSweetProducts }}</a>
+                    </li>
+                  </ul>  
+                  <hr>
+                  <strong><i class="fas fa-heart"></i> &nbsp; Preferencias</strong>    
+                  <ul class="list-group list-group-unbordered mb-3">
+                    <li class="list-group-item">
+                      <b>Llamadas a comercial</b> <a class="float-right">{{ info.0.NumDealsPurchases }}</a>
+                    </li>
+                    <li class="list-group-item">
+                      <b>Visitas a comercial</b> <a class="float-right">{{ info.0.NumStorePurchases }}</a>
+                    </li>
+                    <li class="list-group-item">
+                      <b>Autogestión web</b> <a class="float-right">{{ info.0.NumWebVisitsMonth }}</a>
+                    </li>
+                    <li class="list-group-item">
+                      <b>Autogestión app</b> <a class="float-right">{{ info.0.NumWebPurchases }}</a>
+                    </li>
+                  </ul>                       
                 </div>
             </div>
         </div>
@@ -29,7 +90,14 @@
                 <div class="card-header" style="background-color:rgb(253,218,36)">
                   <h3 class="card-title" style="color:black" >Recomendación cliente</h3>
                 </div>
-                <div class="card-body">                               
+                <div class="card-body">  
+                  <strong><i class="fas fa-lightbulb"></i> &nbsp; Posibles estrategias</strong> 
+                  <br>
+                  {{cluster}}
+                  <hr>
+                  <a href="https://www.oxfordrisk.com/blog-posts/in-love-with-the-familiar">Ampliar información sobre este perfil de personalidad</a>
+                  <a href="https://www.oxfordrisk.com/blog-posts/the-problems-with-panic">Ampliar información sobre cómo tratar a este tipo de clientes</a>
+                  <a href="https://www.oxfordrisk.com/blog-posts/navigating-tempestuous-time-horizons">¿Qué hacer en momentos de crisis en el mercado? Cómo transmitir calma.</a>
                 </div>
             </div>
         </div>

@@ -25,6 +25,7 @@ class InformacionCliente(models.Model):
     NumWebVisitsMonth=models.IntegerField(blank=True, null=True)
     Year_Enrolled =models.IntegerField(blank=True, null=True)
     Age=models.IntegerField(blank=True, null=True)
+    cluster=models.IntegerField(blank=True, null=True)
     class Meta:
         verbose_name = "Clientes"
         verbose_name_plural = "Clientes"
